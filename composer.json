@@ -5,9 +5,9 @@
     "license": "proprietary",
     "authors": [
         {
-            "name": "author name",
-            "email": "author email",
-            "homepage": "author homepage"
+            "name": "Mamadou Hady Barry",
+            "email": "seidya.dev.mhb@gmail.com",
+            "homepage": "https://github.com/mhbarry/laravelresourcefy"
         }
     ],
     "homepage": "https://github.com/mhbarry/laravelresourcefy",
