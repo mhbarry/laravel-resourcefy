@@ -1,7 +1,7 @@
 {
     "name": "mhbarry/laravelresourcefy",
-    "description": ":package_description",
-    "license": "license",
+    "description": "Build resources easly",
+    "license": "proprietary",
     "authors": [
         {
             "name": "author name",
