@@ -42,11 +42,6 @@ class CrudsController extends Controller
             $type = $f->get('type');
             $multiple = $f->get('multiple');
             $value = request($name);
-
-//            if (!$value && !$request->file($)) {
-//                continue;
-//            }
-
             if ($f->get('password')) {
                 $value = bcrypt($value);
             }
@@ -91,7 +86,8 @@ class CrudsController extends Controller
                         @unlink($path);
                     }
                 }
-                $item[$name] = implode(',', $__files);
+                $__files = collect($__files)->filter(function($it) { return $it; })->join(',');
+                $item[$name] = $__files;
             } else if ($type === 'position') {
                 $item[$name] = json_encode($request->get($name));
             } else if (!$multiple){
