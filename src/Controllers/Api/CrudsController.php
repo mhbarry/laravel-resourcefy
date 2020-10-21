@@ -43,6 +43,10 @@ class CrudsController extends Controller
             $multiple = $f->get('multiple');
             $value = request($name);
 
+            if (!$value) {
+                continue;
+            }
+
             if ($f->get('password')) {
                 $value = bcrypt($value);
             }
