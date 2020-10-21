@@ -43,9 +43,9 @@ class CrudsController extends Controller
             $multiple = $f->get('multiple');
             $value = request($name);
 
-            if (!$value) {
-                continue;
-            }
+//            if (!$value && !$request->file($)) {
+//                continue;
+//            }
 
             if ($f->get('password')) {
                 $value = bcrypt($value);
@@ -95,7 +95,10 @@ class CrudsController extends Controller
             } else if ($type === 'position') {
                 $item[$name] = json_encode($request->get($name));
             } else if (!$multiple){
-                $item[$name] = $value;
+                if ($value) {
+                    $item[$name] = $value;
+                }
+
             }
         }
         $item->save();
